@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML artifacts
+models/*.pkl
+models/*.joblib
+models/*.bin
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated data
+data/processed/*
+data/raw/*
+data/ground_truth/*
+
+# Logs
+*.log
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Secrets
+*.pem
+*.key
