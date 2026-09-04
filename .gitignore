@@ -47,3 +47,4 @@ frontend/.vite/
 # Secrets
 *.pem
 *.key
+data/raw_clean_backup/accounting/journal_entries.csv

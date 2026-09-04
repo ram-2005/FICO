@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "datasets_checked": 21,
+  "rows_checked": 4885743,
+  "errors": 0,
+  "warnings": 3,
+  "known_anomalies": 8,
+  "known_anomaly_types": {
+    "AMOUNT_MISMATCH": 1,
+    "DUPLICATE_REFUND": 1,
+    "DUPLICATE_TRANSACTION": 1,
+    "JOURNAL_IMBALANCE": 1,
+    "PAYROLL_AMOUNT_MISMATCH": 1,
+    "SETTLEMENT_AMOUNT_MISMATCH": 1,
+    "TIMING_ANOMALY": 1,
+    "VENDOR_PAYMENT_MISMATCH": 1
+  },
+  "issues": [
+    {
+      "severity": "WARNING",
+      "code": "SETTLEMENT_ARITHMETIC_MISMATCH",
+      "dataset": "data/raw/settlements/settlements.csv",
+      "record": "SET_000103",
+      "message": "Expected 39283.87, observed 39195.47. Likely intentional anomaly if listed in anomalies.csv."
+    },
+    {
+      "severity": "WARNING",
+      "code": "PAYROLL_NET_MISMATCH",
+      "dataset": "data/raw/payroll/payroll.csv",
+      "record": "PYR_000143",
+      "message": "Net pay does not equal gross salary minus deductions."
+    },
+    {
+      "severity": "WARNING",
+      "code": "JOURNAL_IMBALANCE",
+      "dataset": "data/raw/accounting/journal_entries.csv",
+      "record": "JRN_053737",
+      "message": "Debit=414.94, Credit=373.94. Expected anomaly if listed in anomalies.csv."
+    }
+  ],
+  "note": "Warnings may correspond to intentionally injected anomalies; errors are unexpected structural failures."
+}

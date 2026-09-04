@@ -1,0 +1,362 @@
+{
+  "dataset_version": "v1",
+  "company": "Aarohan Commerce Pvt. Ltd.",
+  "period": {
+    "start": "2025-09-01",
+    "end": "2026-08-31"
+  },
+  "timezone": "Asia/Kolkata",
+  "currency": "INR",
+  "random_seed": 42,
+  "architecture": "TRUE_WORLD -> SOURCE_OBSERVATIONS -> CONTROLLED_ANOMALY_INJECTION -> RAW_DATA",
+  "ground_truth_is_runtime_input": false,
+  "anomaly_injection_enabled": true,
+  "files": {
+    "data/raw/master/customers.csv": {
+      "row_count": 8500,
+      "sha256": "8f717cc33ac753fa9575a5fbb10331b21468d84953ed367a2c80c5ef3fb6b02e",
+      "columns": [
+        "customer_id",
+        "customer_name",
+        "city",
+        "state",
+        "postal_code",
+        "signup_date",
+        "preferred_payment_method"
+      ]
+    },
+    "data/raw/master/vendors.csv": {
+      "row_count": 150,
+      "sha256": "368321bd525998f90c11a2522761319dbb8b32dc5d49112c9b2e2c593b45d63d",
+      "columns": [
+        "vendor_id",
+        "vendor_name",
+        "vendor_category",
+        "credit_period_days",
+        "gst_registered",
+        "handles_cod"
+      ]
+    },
+    "data/raw/master/employees.csv": {
+      "row_count": 80,
+      "sha256": "397d432d2139d8e89f6b7ef5365a086768b3dbf2919f0288b316a91e6091697d",
+      "columns": [
+        "employee_id",
+        "employee_name",
+        "department",
+        "designation",
+        "joining_date",
+        "monthly_gross"
+      ]
+    },
+    "data/raw/master/products.csv": {
+      "row_count": 350,
+      "sha256": "7c9089dc3bb9604d47ce59e08328d166045d48e7a72b9ed35c17cf93a3a4dc3d",
+      "columns": [
+        "product_id",
+        "product_name",
+        "category",
+        "unit_price",
+        "cost_price"
+      ]
+    },
+    "data/raw/master/bank_accounts.csv": {
+      "row_count": 4,
+      "sha256": "fcca36cde695e338c0dc081c6413d4c336be1a2c1c8ff3031dde05e5b19660d7",
+      "columns": [
+        "account_id",
+        "account_role",
+        "bank_name",
+        "ifsc",
+        "currency"
+      ]
+    },
+    "data/raw/master/payment_accounts.csv": {
+      "row_count": 1,
+      "sha256": "e0554df876a052e15af5a2b64b423ef3d042955bab2bf937178d9edc35555933",
+      "columns": [
+        "payment_account_id",
+        "gateway_name",
+        "linked_bank_account_id",
+        "settlement_cycle",
+        "currency"
+      ]
+    },
+    "data/raw/master/tax_accounts.csv": {
+      "row_count": 2,
+      "sha256": "bce52a48d0cc6d2ecd9019181766d2240b327ae36afc4dec942befcf880a01f5",
+      "columns": [
+        "tax_account_id",
+        "tax_type",
+        "filing_frequency",
+        "currency"
+      ]
+    },
+    "data/raw/commerce/orders.csv": {
+      "row_count": 157461,
+      "sha256": "5b890599968ebd8674d096222ed14223ca445665be1e067374cb1f4f1f268c23",
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_date",
+        "gross_amount",
+        "discount",
+        "tax",
+        "shipping_fee",
+        "net_amount",
+        "order_status",
+        "payment_method_selected",
+        "fulfillment_hub",
+        "invoice_date",
+        "delivered_date",
+        "sku_lines"
+      ]
+    },
+    "data/raw/commerce/invoices.csv": {
+      "row_count": 157461,
+      "sha256": "41b58c9931df78433d3f369510553d144082abe52d127b588c8311a4262ec3df",
+      "columns": [
+        "invoice_id",
+        "order_id",
+        "customer_id",
+        "invoice_date",
+        "gross_amount",
+        "discount",
+        "tax",
+        "shipping_fee",
+        "net_amount",
+        "invoice_status",
+        "currency"
+      ]
+    },
+    "data/raw/payments/payments.csv": {
+      "row_count": 129344,
+      "sha256": "8d95674f999bcbb76398ad5e70a8ab614b9e3d87d237f5586cf225ddd5fbb76b",
+      "columns": [
+        "payment_id",
+        "order_id",
+        "customer_id",
+        "payment_date",
+        "gateway",
+        "payment_method",
+        "amount",
+        "currency",
+        "status",
+        "gateway_reference"
+      ]
+    },
+    "data/raw/payments/refunds.csv": {
+      "row_count": 5343,
+      "sha256": "465dff2fc4ab08addb4a1837b1d197dacff399594a651defe60d491c94dc8935",
+      "columns": [
+        "refund_id",
+        "order_id",
+        "payment_id",
+        "refund_date",
+        "refund_type",
+        "refund_reason",
+        "amount",
+        "currency",
+        "status",
+        "gateway",
+        "gateway_reference",
+        "customer_id"
+      ]
+    },
+    "data/raw/settlements/settlements.csv": {
+      "row_count": 3962,
+      "sha256": "53854cd7ce1f740722a908f18e2a4419ddc1b2ceb890e6bbcad0684a34dbe10a",
+      "columns": [
+        "settlement_id",
+        "settlement_date",
+        "gateway",
+        "currency",
+        "payment_count",
+        "gross_amount",
+        "refund_deductions",
+        "net_settlement_amount",
+        "destination_account_id",
+        "gateway_settlement_reference",
+        "first_payment_id",
+        "last_payment_id"
+      ]
+    },
+    "data/raw/banking/bank_transactions.csv": {
+      "row_count": 8679,
+      "sha256": "067e40f09b85acc79186f3d2f716ab554d7b88c636dec9ca4673de891b98bab4",
+      "columns": [
+        "bank_transaction_id",
+        "account_id",
+        "transaction_date",
+        "value_date",
+        "amount",
+        "currency",
+        "direction",
+        "transaction_type",
+        "description",
+        "reference_id",
+        "counterparty_id",
+        "status"
+      ]
+    },
+    "data/raw/accounting/journal_entries.csv": {
+      "row_count": 760412,
+      "sha256": "c21b950c752b6f4c1375537ca91ac414d03987285ed7aabf7dbd1400a749a223",
+      "columns": [
+        "journal_entry_id",
+        "line_number",
+        "timestamp",
+        "source_system",
+        "source_record_id",
+        "account_id",
+        "counterparty_id",
+        "debit",
+        "credit",
+        "currency",
+        "description",
+        "reference_id",
+        "status"
+      ]
+    },
+    "data/raw/vendors/vendor_invoices.csv": {
+      "row_count": 7122,
+      "sha256": "54e0f26aae5fee08b336e9287df51a4017f8831830124e7dac6fb234e6058cde",
+      "columns": [
+        "vendor_invoice_id",
+        "vendor_id",
+        "vendor_category",
+        "invoice_date",
+        "due_date",
+        "invoice_type",
+        "description",
+        "subtotal",
+        "tax_amount",
+        "total_amount",
+        "currency",
+        "status",
+        "purchase_reference",
+        "handles_cod"
+      ]
+    },
+    "data/raw/vendors/vendor_payments.csv": {
+      "row_count": 7122,
+      "sha256": "16c25d7788f246487c6f1547b2bd3c9d46917ac6946f1dfdceae6910c683a8fc",
+      "columns": [
+        "vendor_payment_id",
+        "vendor_invoice_id",
+        "vendor_id",
+        "payment_date",
+        "payment_account_id",
+        "amount",
+        "currency",
+        "payment_method",
+        "status",
+        "bank_reference"
+      ]
+    },
+    "data/raw/payroll/payroll.csv": {
+      "row_count": 960,
+      "sha256": "ce7e70b82427ea01b22f28fa762e0d1a3c6f43b1448d577875282de6a9f2d6a6",
+      "columns": [
+        "payroll_id",
+        "employee_id",
+        "employee_name",
+        "department",
+        "designation",
+        "payroll_period",
+        "pay_date",
+        "gross_salary",
+        "employee_pf",
+        "professional_tax",
+        "tds",
+        "employee_deductions",
+        "net_pay",
+        "employer_pf",
+        "employer_esic",
+        "employer_contributions",
+        "total_employer_cost",
+        "currency",
+        "payment_account_id",
+        "status",
+        "bank_reference"
+      ]
+    },
+    "data/ground_truth/events.csv": {
+      "row_count": 916501,
+      "sha256": "354c3f6e162fd0c4c7be9fd818206ab6d52f38f13146a03a8f3e9efb1c36fc3f",
+      "columns": [
+        "event_id",
+        "event_type",
+        "timestamp",
+        "entity_type",
+        "entity_id",
+        "amount",
+        "currency",
+        "direction",
+        "counterparty_id",
+        "reference_id",
+        "source_record_id",
+        "description"
+      ]
+    },
+    "data/ground_truth/relationships.csv": {
+      "row_count": 1685843,
+      "sha256": "7ad446f95e349ed8a9e8372d0d38b9f2d8394fc7e3682da79a5d8c9a23044069",
+      "columns": [
+        "relationship_id",
+        "relationship_type",
+        "from_entity_type",
+        "from_entity_id",
+        "to_entity_type",
+        "to_entity_id",
+        "source_system",
+        "source_record_id",
+        "description"
+      ]
+    },
+    "data/ground_truth/expected_states.csv": {
+      "row_count": 1036438,
+      "sha256": "1125487ec657bc4af1b86f73fb8c7be9ac913f2571bb81e55357fd2581812ba2",
+      "columns": [
+        "state_id",
+        "state_type",
+        "entity_type",
+        "entity_id",
+        "metric",
+        "expected_value",
+        "unit",
+        "rule",
+        "source_system",
+        "source_record_id"
+      ]
+    },
+    "data/ground_truth/anomalies.csv": {
+      "row_count": 8,
+      "sha256": "38ace8f9ca1ff3fd5505a0d86e41bfb94fb120ed638c24fb9f7c2faba1783124",
+      "columns": [
+        "anomaly_id",
+        "anomaly_type",
+        "severity",
+        "source_system",
+        "dataset",
+        "source_record_id",
+        "field",
+        "original_value",
+        "corrupted_value",
+        "reason",
+        "injected_at"
+      ]
+    }
+  },
+  "known_anomalies": 8,
+  "known_anomaly_types": {
+    "AMOUNT_MISMATCH": 1,
+    "DUPLICATE_REFUND": 1,
+    "DUPLICATE_TRANSACTION": 1,
+    "JOURNAL_IMBALANCE": 1,
+    "PAYROLL_AMOUNT_MISMATCH": 1,
+    "SETTLEMENT_AMOUNT_MISMATCH": 1,
+    "TIMING_ANOMALY": 1,
+    "VENDOR_PAYMENT_MISMATCH": 1
+  }
+}
