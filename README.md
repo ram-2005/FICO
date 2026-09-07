@@ -96,6 +96,10 @@ LLM investigation
 
 ## Architecture
 
+### High Level Architecture
+
+![High-Level Architecture](docs/images/Architecture1.png)
+
 ```text
 External Sources
   │
@@ -132,6 +136,10 @@ Human & Learning
 ```
 
 ## UML — Financial Domain Model
+
+### Financial Graph Model
+
+![Financial Graph Model](docs/images/Architecture2.png)
 
 The financial graph represents the company's financial reality as connected entities and relationships.
 
