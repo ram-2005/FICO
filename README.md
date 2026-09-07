@@ -637,22 +637,6 @@ Run LLM investigation
 
 ---
 
-## Demo
-
-**5-minute technical walkthrough:**  
-`<ADD_VIDEO_LINK>`
-
-The demo shows:
-
-1. Financial data ingestion
-2. Graph construction
-3. Deterministic reconciliation
-4. Exception detection
-5. Evidence construction
-6. LLM investigation
-
----
-
 ## Evaluation & Honesty
 
 This project was built for **Razorpay Buildathon 2026 — Track 04: AI Finance Controller**, whose bar emphasizes throughput, measured accuracy, and an honest exception list.
